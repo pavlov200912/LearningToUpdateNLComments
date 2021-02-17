@@ -18,7 +18,7 @@ def subtokenize_comment(comment_line):
     """Subtokenizes a comment, which is in string format.
        Returns list of subtokens, labels (whether each term is a subtoken of a larger token),
        and indices (index of subtoken within larger token)."""
-    comment_line = remove_return_string(comment_line)
+    #comment_line = remove_return_string(comment_line)
     comment_line = remove_html_tag(comment_line.replace('/**', '').replace('**/', '').replace('/*', '').replace('*/', '').replace('*', '').strip())
     comment_line = re.findall(r"[a-zA-Z0-9]+|[^\sa-zA-Z0-9]|[^_\sa-zA-Z0-9]", comment_line.strip())
     comment_line = ' '.join(comment_line)

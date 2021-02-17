@@ -54,14 +54,14 @@ def subtokenize_comment(comment_line):
             subtokens.append(curr[s].lower())
 
     if subtokens[0] == '@' and subtokens[1] == 'param':
-        subtokens[0] = '@param'
         subtokens = subtokens[1:]
+        subtokens[0] = '@param'
         labels = labels[1:]
         indices = indices[1:]
 
     if subtokens[0] == '@' and subtokens[1] == 'return':
-        subtokens[0] = '@return'
         subtokens = subtokens[1:]
+        subtokens[0] = '@return'
         labels = labels[1:]
         indices = indices[1:]
 
